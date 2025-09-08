@@ -34,6 +34,14 @@ public class Main {
             System.out.println("3 - Лететь.");
             System.out.println("0 - Выход из игры.");
             System.out.println("Выбор: ");
+
+            //проверка на правильный ввод
+            if (!scanner.hasNextInt()) {
+                System.out.println("Ошибка! Только ввод числа!");
+                scanner.next(); //очищаем неправильный ввод
+                continue; //перезапуск цикла
+            }
+            
             //читаем выбор юзера
             int choice = scanner.nextInt();
             //выход из игры
@@ -65,4 +73,5 @@ public class Main {
         scanner.close();
         System.out.println("\nКонец путешествия! Герой пришел в точку \"" + hero.getCurrentLocation() + "\".");
     }
+
 }
